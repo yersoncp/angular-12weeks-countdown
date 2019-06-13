@@ -1,0 +1,26 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #21288f;
+}
+
+.wrapper__inner {
+  text-align: center;
+  color: #fff;
+  padding: 20% 20px 20px;
+}
+
+.wrapper__inner h2 {
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 3rem;
+}
+
+.wrapper__inner h3 {
+  font-family: Arial;
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
