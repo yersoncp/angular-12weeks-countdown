@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import moment from 'moment';
-import {Moment} from 'moment';
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-date-weeks',
