@@ -33,10 +33,14 @@ export class DateWeeksComponent implements OnInit {
         this.currentDate = this._getDate12w(_startDateArr[index - 1 < 0 ? 0 : index - 1]);
         return true;
       }
-    })
+    });
 
-    setInterval(_ => {
+    let _interval = setInterval(_ => {
       this.currentDate = moment(this.currentDate).add(1, 'minutes');
+      // if(moment('2019-10-23 02:45') == this.currentDate) {
+      //   clearInterval(_interval);
+      //   console.log(1);
+      // }
     }, ratio);
   }
 
