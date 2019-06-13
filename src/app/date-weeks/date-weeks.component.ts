@@ -20,9 +20,20 @@ export class DateWeeksComponent implements OnInit {
   initBuild() {
     let formatStr = 'YYYY MMM DD HH:mm A';
     let _startDate = moment('2019-04-01 00:00');
-    this.currentDate = this._getDate12w(_startDate);
+    let ratio = (1000 * 60) / 4;
 
-    let ratio = (1000 * 60) / 4; // 1 min
+    let _startDateArr = [
+      '2019-01-01 00:00',
+      '2019-04-01 00:00',
+      '2019-07-01 00:00',
+      '2019-10-01 00:00'
+    ];
+    _startDateArr.some((e, index) => {
+      if(moment().isBefore(e)) {
+        this.currentDate = this._getDate12w(_startDateArr[index - 1 < 0 ? 0 : index - 1]);
+        return true;
+      }
+    })
 
     setInterval(_ => {
       this.currentDate = moment(this.currentDate).add(1, 'minutes');
