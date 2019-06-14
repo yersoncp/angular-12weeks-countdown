@@ -20,12 +20,11 @@ export class DateWeeksComponent implements OnInit {
   initBuild() {
     let formatStr = 'YYYY MMM DD HH:mm A';
     let ratio = (1000 * 60) / 4;
-
     let _startDateArr = [
-      '2019-01-01 00:00',
-      '2019-04-01 00:00',
-      '2019-07-01 00:00',
-      '2019-10-01 00:00'
+      `${moment().year()}-01-01 00:00`,
+      `${moment().year()}-04-01 00:00`,
+      `${moment().year()}-07-01 00:00`,
+      `${moment().year()}-10-01 00:00`
     ];
     _startDateArr.some((e, index) => {
       if(moment().isBefore(e)) {
