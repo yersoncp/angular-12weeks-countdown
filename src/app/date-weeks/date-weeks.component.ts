@@ -19,7 +19,6 @@ export class DateWeeksComponent implements OnInit {
 
   initBuild() {
     let formatStr = 'YYYY MMM DD HH:mm A';
-    let _startDate = moment('2019-04-01 00:00');
     let ratio = (1000 * 60) / 4;
 
     let _startDateArr = [
