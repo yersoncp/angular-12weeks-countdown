@@ -12,7 +12,7 @@ export class DateWeeksComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this._initBuild();
   }
 
