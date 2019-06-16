@@ -3,8 +3,8 @@ import moment, { Moment } from 'moment';
 
 @Component({
   selector: 'app-date-weeks',
-  templateUrl: './date-weeks.component.html',
-  styleUrls: ['./date-weeks.component.css']
+  styleUrls: ['./date-weeks.component.css'],
+  templateUrl: './date-weeks.component.html'
 })
 export class DateWeeksComponent implements OnInit {
 
@@ -13,12 +13,12 @@ export class DateWeeksComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initBuild();
+    this._initBuild();
   }
 
-  initBuild() {
+  private _initBuild() {
     const formatStr = 'YYYY MMM DD HH:mm A';
-    const ratio = (1000 * 60) / 4;
+    const ratio = (1000 * 60)/4;
     const _startDateArr = [
       `${moment().year()}-01-01 00:00`,
       `${moment().year()}-04-01 00:00`,
@@ -32,7 +32,7 @@ export class DateWeeksComponent implements OnInit {
       }
     });
 
-    let _interval = setInterval(_ => {
+    const _interval = setInterval(_ => {
       this.currentDate = moment(this.currentDate).add(1, 'minutes');
       // if(moment('2019-10-23 02:45') == this.currentDate) {
       //   clearInterval(_interval);
@@ -41,12 +41,11 @@ export class DateWeeksComponent implements OnInit {
     }, ratio);
   }
 
-  _getDate12w(_startDate) {
-    let _startYearOf = moment().startOf('year').format('YYYY-MM-DD H:mm');
-    let _dateNow = moment().format('YYYY-MM-DD H:mm');
-    let _startYear = moment(_startYearOf);
-    let _currentDateReal = moment(_dateNow);
+  private _getDate12w(_startDate) {
+    const _startYearOf = moment().startOf('year').format('YYYY-MM-DD H:mm');
+    const _dateNow = moment().format('YYYY-MM-DD H:mm');
+    const _startYear = moment(_startYearOf);
+    const _currentDateReal = moment(_dateNow);
     return moment(_startYear).add(_currentDateReal.diff(_startDate, 'minutes') * 4, 'minutes');
   }
-
 }
