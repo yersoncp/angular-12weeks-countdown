@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import moment from 'moment';
-import { Moment } from 'moment';
+import moment, { Moment } from 'moment';
 
 @Component({
   selector: 'app-date-weeks',
@@ -18,9 +17,9 @@ export class DateWeeksComponent implements OnInit {
   }
 
   initBuild() {
-    let formatStr = 'YYYY MMM DD HH:mm A';
-    let ratio = (1000 * 60) / 4;
-    let _startDateArr = [
+    const formatStr = 'YYYY MMM DD HH:mm A';
+    const ratio = (1000 * 60) / 4;
+    const _startDateArr = [
       `${moment().year()}-01-01 00:00`,
       `${moment().year()}-04-01 00:00`,
       `${moment().year()}-07-01 00:00`,
