@@ -42,10 +42,8 @@ export class DateWeeksComponent implements OnInit {
   }
 
   private _getDate12w(_startDate) {
-    const _startYearOf = moment().startOf('year').format('YYYY-MM-DD H:mm');
-    const _dateNow = moment().format('YYYY-MM-DD H:mm');
-    const _startYear = moment(_startYearOf);
-    const _currentDateReal = moment(_dateNow);
-    return moment(_startYear).add(_currentDateReal.diff(_startDate, 'minutes') * 4, 'minutes');
+    const _startYearOf = moment(moment().startOf('year').format('YYYY-MM-DD H:mm'));
+    const _dateNow = moment(moment().format('YYYY-MM-DD H:mm'));
+    return moment(_startYearOf).add(_dateNow.diff(_startDate, 'minutes') * 4, 'minutes');
   }
 }
