@@ -32,6 +32,9 @@ export class DateWeeksComponent implements OnInit {
       }
     });
 
+    //console.log(moment().isAfter('2019-06-15 00:00')); // despues
+    //console.log(moment().isBefore('2019-06-21 23:59')); // antes
+
     const _interval = setInterval(_ => {
       this.currentDate = moment(this.currentDate).add(1, 'minutes');
       // if(moment('2019-10-23 02:45') == this.currentDate) {
